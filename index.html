@@ -168,6 +168,8 @@
         </svg>
     </button>
 
+    <div id="musicHint" class="music-hint">اضغط في أي حتة لتشغيل الموسيقى</div>
+
     <script>
         document.addEventListener('DOMContentLoaded', () => {
 
@@ -232,10 +234,15 @@
             document.addEventListener('touchstart', unmute, { passive: true });
 
             const toggleBtn = document.getElementById('musicToggle');
+            const hint = document.getElementById('musicHint');
+            let startedAudible = false;
+
             const reflect = () => {
                 const audible = !bgm.paused && !bgm.muted;
+                if (audible) startedAudible = true;
                 toggleBtn.classList.toggle('playing', audible);
                 toggleBtn.classList.toggle('paused', !audible);
+                hint.classList.toggle('show', !audible && !startedAudible);
             };
             bgm.addEventListener('play', reflect);
             bgm.addEventListener('pause', reflect);
@@ -250,6 +257,10 @@
             });
 
             startPlayback();
+            window.addEventListener('pageshow', startPlayback);
+            document.addEventListener('visibilitychange', () => {
+                if (!document.hidden) startPlayback();
+            });
         });
     </script>
 </body>
