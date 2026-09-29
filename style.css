@@ -527,9 +527,9 @@ body {
     transform: scale(1.08);
 }
 
-.music-toggle svg {
-    width: 22px;
-    height: 22px;
+.music-toggle i {
+    font-size: 21px;
+    line-height: 1;
 }
 
 .music-toggle .on {
