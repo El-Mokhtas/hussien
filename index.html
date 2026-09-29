@@ -11,7 +11,8 @@
     <meta property="og:title" content="وبالحب نبدأ أجمل حكاية | Hussein &amp; Asmaa">
     <meta property="og:description" content="فرحتنا على مزاجكم.. ووجودكم يكمّلها. الحنة الاثنين 9 / 11 / 2026 بقاعة الكريستالة، والفرح الأربعاء 11 / 11 / 2026 بقاعة الشيرتون المغلقة.">
     <meta property="og:site_name" content="وبالحب نبدأ أجمل حكاية | Hussein &amp; Asmaa">
-    <meta property="og:image" content="WhatsApp%20Image%202026-09-28%20at%205.41.19%20PM.jpeg">
+    <meta property="og:url" content="https://el-mokhtas.github.io/hussien/">
+    <meta property="og:image" content="https://el-mokhtas.github.io/hussien/WhatsApp%20Image%202026-09-28%20at%205.41.19%20PM.jpeg">
     <meta property="og:image:width" content="1448">
     <meta property="og:image:height" content="1086">
     <meta property="og:image:type" content="image/jpeg">
@@ -19,7 +20,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="وبالحب نبدأ أجمل حكاية | Hussein &amp; Asmaa">
     <meta name="twitter:description" content="فرحتنا على مزاجكم.. ووجودكم يكمّلها. الحنة الاثنين 9 / 11 / 2026 بقاعة الكريستالة، والفرح الأربعاء 11 / 11 / 2026 بقاعة الشيرتون المغلقة.">
-    <meta name="twitter:image" content="WhatsApp%20Image%202026-09-28%20at%205.41.19%20PM.jpeg">
+    <meta name="twitter:image" content="https://el-mokhtas.github.io/hussien/WhatsApp%20Image%202026-09-28%20at%205.41.19%20PM.jpeg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -153,6 +154,20 @@
 
     </main>
 
+    <button id="musicToggle" class="music-toggle paused" type="button" aria-label="تشغيل الموسيقى">
+        <svg class="on" viewBox="0 0 24 24" fill="currentColor">
+            <circle cx="8" cy="18" r="2.5"/>
+            <circle cx="18" cy="16" r="2.5"/>
+            <path d="M10.5 18V5l10-2v13"/>
+        </svg>
+        <svg class="off" viewBox="0 0 24 24" fill="currentColor">
+            <circle cx="8" cy="18" r="2.5"/>
+            <circle cx="18" cy="16" r="2.5"/>
+            <path d="M10.5 18V5l10-2v13"/>
+            <line x1="3" y1="3" x2="21" y2="21"/>
+        </svg>
+    </button>
+
     <script>
         document.addEventListener('DOMContentLoaded', () => {
 
@@ -215,6 +230,24 @@
             document.addEventListener('pointerdown', unmute);
             document.addEventListener('keydown', unmute);
             document.addEventListener('touchstart', unmute, { passive: true });
+
+            const toggleBtn = document.getElementById('musicToggle');
+            const reflect = () => {
+                const audible = !bgm.paused && !bgm.muted;
+                toggleBtn.classList.toggle('playing', audible);
+                toggleBtn.classList.toggle('paused', !audible);
+            };
+            bgm.addEventListener('play', reflect);
+            bgm.addEventListener('pause', reflect);
+
+            toggleBtn.addEventListener('click', () => {
+                if (!bgm.paused) {
+                    bgm.pause();
+                } else {
+                    bgm.muted = false;
+                    bgm.play().catch(() => { });
+                }
+            });
 
             startPlayback();
         });

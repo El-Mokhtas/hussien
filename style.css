@@ -477,4 +477,63 @@ body {
     }
 }
 
+.music-toggle {
+    position: fixed;
+    bottom: 22px;
+    left: 22px;
+    width: 48px;
+    height: 48px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(26, 42, 94, 0.88);
+    color: #c9a864;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 50;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+    transition: transform 0.2s ease;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.music-toggle:hover {
+    transform: scale(1.08);
+}
+
+.music-toggle svg {
+    width: 22px;
+    height: 22px;
+}
+
+.music-toggle .on {
+    display: none;
+}
+
+.music-toggle .off {
+    display: block;
+}
+
+.music-toggle.playing .on {
+    display: block;
+}
+
+.music-toggle.playing .off {
+    display: none;
+}
+
+.music-toggle.playing {
+    animation: music-pulse 1.8s ease-in-out infinite;
+}
+
+@keyframes music-pulse {
+    0%, 100% {
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+    }
+
+    50% {
+        box-shadow: 0 4px 22px rgba(201, 168, 100, 0.6);
+    }
+}
+
 
