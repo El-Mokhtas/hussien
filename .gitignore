@@ -1,0 +1,24 @@
+# OS
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+npm-debug.log*
+
+# NuPack / packages
+node_modules/
+jspm_packages/
+bower_components/
+
+# Generated
+dist/
+build/
+*.local
