@@ -384,6 +384,11 @@ body {
 }
 
 @media (max-width: 768px) {
+    .content {
+        justify-content: flex-start;
+        padding: 50px 24px 70px;
+    }
+
     .floral-top {
         width: 250px;
     }
@@ -392,88 +397,176 @@ body {
         width: 330px;
     }
 
-    .content {
-        padding: 50px 30px 70px;
-    }
-
     .line-img {
-        width: 24px;
-        height: 90px;
+        width: 22px;
+        height: 82px;
     }
 
     .line-divider {
-        width: 24px;
-        height: 90px;
+        width: 22px;
+        height: 82px;
+    }
+}
+
+@media (max-width: 560px) {
+    .content {
+        padding: 44px 14px 56px;
+    }
+
+    .quran-verse {
+        padding: 0 8px;
+        margin-bottom: 12px;
+    }
+
+    .verse-text {
+        font-size: 16px;
+        line-height: 1.8;
+    }
+
+    .date-section {
+        margin-bottom: 12px;
+    }
+
+    .divider-dots {
+        font-size: 11px;
+        letter-spacing: 2px;
+    }
+
+    .date-text {
+        font-size: 15px;
+        letter-spacing: 3px;
+    }
+
+    .parents-section {
+        gap: 6px;
+        padding: 0 6px;
+        margin-bottom: 16px;
+    }
+
+    .parent-title {
+        font-size: 13px;
+    }
+
+    .parent-name {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    .invite-section {
+        margin-bottom: 16px;
+    }
+
+    .invite-text {
+        font-size: 20px;
+    }
+
+    .couple-section {
+        gap: 6px;
+        padding: 0 2px;
+        margin-bottom: 18px;
+    }
+
+    .groom-side,
+    .bride-side {
+        gap: 4px;
+    }
+
+    .person-title {
+        font-size: 13px;
+    }
+
+    .person-name {
+        font-size: 23px;
+    }
+
+    .person-degree {
+        font-size: 11px;
+        line-height: 1.5;
+    }
+
+    .ampersand {
+        font-size: 28px;
+    }
+
+    .details-section {
+        padding: 0 2px;
+        margin-bottom: 18px;
+    }
+
+    .detail-item {
+        padding: 0 4px;
+        gap: 5px;
+    }
+
+    .detail-icon {
+        width: 32px;
+        height: 32px;
+    }
+
+    .detail-label {
+        font-size: 11px;
+    }
+
+    .detail-value {
+        font-size: 12.5px;
+        line-height: 1.5;
+    }
+
+    .detail-sub,
+    .detail-venue {
+        font-size: 11px;
+        line-height: 1.6;
+    }
+
+    .line-divider {
+        width: 16px;
+        height: 60px;
+    }
+
+    .line-img {
+        width: 16px;
+        height: 60px;
+    }
+
+    .ending-text {
+        font-size: 20px;
     }
 }
 
 @media (max-width: 480px) {
     .floral-top {
-        width: 200px;
+        width: 170px;
     }
 
     .floral-bottom {
-        width: 300px;
+        width: 260px;
     }
 
     .content {
-        padding: 40px 20px 60px;
+        padding: 40px 12px 50px;
     }
 
     .parents-section {
-        padding: 0 10px;
+        padding: 0 4px;
     }
 
     .couple-section {
-        gap: 12px;
-    }
-
-    .details-section {
-        padding: 0 5px;
+        gap: 4px;
     }
 
     .detail-icon {
-        width: 38px;
-        height: 38px;
+        width: 28px;
+        height: 28px;
     }
 
     .line-img {
-        width: 20px;
-        height: 75px;
+        width: 14px;
+        height: 52px;
     }
 
     .line-divider {
-        width: 20px;
-        height: 75px;
-    }
-}
-
-@media (max-width: 560px) {
-    .details-section {
-        flex-direction: column;
-        align-items: center;
-        max-width: 340px;
-    }
-
-    .detail-item {
-        width: 100%;
-        flex: none;
-    }
-
-    .line-divider {
-        width: 150px;
-        height: 26px;
-        transform: scaleX(0.3);
-    }
-
-    .line-divider.visible {
-        transform: scaleX(1);
-    }
-
-    .line-img {
-        width: 26px;
-        height: 150px;
-        transform: rotate(90deg);
+        width: 14px;
+        height: 52px;
     }
 }
 
